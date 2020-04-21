@@ -42,9 +42,9 @@ export class HeroService {
         };
     }
 
+    /** GET heroes from the server */
     getHeroes(): Observable<Hero[]> {
         // TODO send the message _after_ fetching heroes
-        this.messageService.add('HeroService: fetched heroes');
         return this.http.get<Hero[]>(this.heroesUrl)
             .pipe(
                 tap(_ => this.log('fetched heroes')),
